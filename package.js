@@ -1,28 +1,27 @@
 Package.describe({
-  summary: 'Accounts Templates styled for Twitter Bootstrap.',
-  version: '1.14.2',
-  name: 'useraccounts:bootstrap',
+  summary: 'Accounts Templates styled for Twitter Bootstrap & refactored for Angular-Meteor.',
+  version: '0.0.1',
+  name: 'moto:useraccounts-bootstrap-angular',
   git: 'https://github.com/meteor-useraccounts/bootstrap.git',
 });
 
 Package.on_use(function(api, where) {
-  api.versionsFrom('METEOR@1.0');
+  api.versionsFrom('METEOR@1.3.2.4');
 
   api.use([
-    'templating',
+    'angular-templates',
     'underscore',
   ], 'client');
 
   api.use([
-    'useraccounts:core',
+    'moto:useraccounts-core-angular',
   ], ['client', 'server']);
 
   // Requires all routing packages loads before this asking for weak dependencies.
-  api.use('useraccounts:flow-routing@1.14.2', ['client', 'server'], {weak: true});
-  api.use('useraccounts:iron-routing@1.14.2', ['client', 'server'], {weak: true});
+  api.use('angularui:angular-ui-router@0.2.15', ['client', 'server'], {weak: true});
 
   api.imply([
-    'useraccounts:core@1.14.2',
+    'moto:useraccounts-core-angular@0.0.1',
   ], ['client', 'server']);
 
   api.add_files([
@@ -69,8 +68,8 @@ Package.on_use(function(api, where) {
 
 Package.on_test(function(api) {
   api.use([
-    'useraccounts:bootstrap',
-    'useraccounts:core@1.14.2',
+    'moto:useraccounts-bootstrap-angular',
+    'moto:useraccounts-core-angular@0.0.1',
   ]);
 
   api.use([
