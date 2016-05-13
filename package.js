@@ -61,8 +61,8 @@ Package.on_use(function(api, where) {
     'lib/at_resend_verification_email_link.js',
     'lib/at_title.html',
     'lib/at_title.js',
-    'lib/full_page_at_form.html',
-    'lib/at_bootstrap.css'
+    // 'lib/full_page_at_form.html',
+    // 'lib/at_bootstrap.css'
   ], ['client']);
 });
 

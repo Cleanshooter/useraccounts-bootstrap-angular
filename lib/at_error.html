@@ -1,7 +1,3 @@
-<template name="atError">
-  <div class="at-error alert alert-danger">
-    {{#each error}}
-      <p>{{errorText}}</p>
-    {{/each}}
-  </div>
-</template>
+<div class="at-error alert alert-danger">
+	<p ng-repeat="e in error">{{e.errorText}}</p>
+</div>
